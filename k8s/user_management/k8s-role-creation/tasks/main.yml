@@ -1,0 +1,44 @@
+---
+# tasks file for k8s-role-creation
+
+- name: create temp dir
+  file:
+    state: directory
+    mode: 0777
+    path: /tmp/kctl-apply
+
+- name: render templates
+  template:
+    src: "{{ item }}.j2"
+    dest: "/tmp/kctl-apply/{{ item }}"
+  with_items: "{{ role_templates }}"
+
+- name: create user
+  shell: "kubectl apply -f /tmp/kctl-apply/{{ item }} --kubeconfig {{ kubeconfig }}"
+  with_items: "{{ role_templates }}"
+
+- name: get token name
+  shell: "kubectl get sa -n default admin-custom --kubeconfig /home/mcharopkin/srn/09/KUBECONFIG -o json"
+  register: token
+
+- debug:
+    msg: "{{ (token.stdout | from_json)['secrets'][0]['name']  }}"
+
+- name: get token
+  shell: "kubectl get secret -n {{ user_namespace }} {{ (token.stdout | from_json)['secrets'][0]['name'] }} --kubeconfig {{ kubeconfig }} -o json"
+  register: token
+
+- debug: 
+    msg: "{{ ((token.stdout | from_json)['data']['token'] | b64decode) }}"
+
+- name: render kubeconfig
+  template:
+    src: kubeconfig.j2
+    dest: ./kubeconfig
+  vars:
+    user_token: "{{ ((token.stdout | from_json)['data']['token'] | b64decode) }}"
+
+- name: delete temp dir
+  file:
+    state: absent
+    path: /tmp/kctl-apply
