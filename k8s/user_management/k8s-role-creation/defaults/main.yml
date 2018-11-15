@@ -1,0 +1,12 @@
+---
+# defaults file for k8s-role-creation
+  user_name: admin-custom
+  user_namespace: default
+  cluster_role: True 
+
+
+  role_templates:
+    - sa.yml
+      #    - role.yml
+    - role-binding.yml
+

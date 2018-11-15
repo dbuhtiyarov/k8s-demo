@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: {% if cluster_role %} ClusterRoleBinding {% else %} RoleBinding {% endif %}
+
+metadata:
+  name: {{ user_name }}
+  namespace: {{ user_namespace }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: {% if cluster_role %} ClusterRole {% else %} Role {% endif %}
+
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: {{ user_name }}
+  namespace: {{ user_namespace }}

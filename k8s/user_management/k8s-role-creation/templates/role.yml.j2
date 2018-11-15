@@ -1,0 +1,13 @@
+kind: {% if cluster_role %} ClusterRole {% else %} Role {% endif %}
+
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: {{ user_namespace }}
+  name: {{ user_name }}
+rules:
+- apiGroups: [""]
+  resources: ["services", "endpoints", "pods"]
+  verbs: ["get", "list", "watch"]
+#- apiGroups: ["*"] # "" indicates the core API group
+#  resources: ["*"]
+#  verbs: ["*"]
