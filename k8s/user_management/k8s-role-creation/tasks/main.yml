@@ -18,7 +18,7 @@
   with_items: "{{ role_templates }}"
 
 - name: get token name
-  shell: "kubectl get sa -n default admin-custom --kubeconfig /home/mcharopkin/srn/09/KUBECONFIG -o json"
+  shell: "kubectl get sa -n default admin-custom --kubeconfig {{ kubeconfig }} -o json"
   register: token
 
 - debug:
