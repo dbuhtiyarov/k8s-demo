@@ -3,7 +3,7 @@
   user_name: admin-custom
   user_namespace: default
   cluster_role: True 
-
+  kubeconfig: "~/.kube/config"
 
   role_templates:
     - sa.yml
