@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: elk-ingress
+  namespace: elk
+  annotations:
+    #ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: elk-basic-auth
+    nginx.ingress.kubernetes.io/proxy-body-size: "500m"
+    #nginx.org/client-max-body-size: "500m"
+spec:
+  rules:
+  - host: elastic.demo
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: elasticsearch-logging
+          servicePort: 9200
+  - host: kibana.demo
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kibana-logging
+          servicePort: 5601
