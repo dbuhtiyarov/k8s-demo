@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "vernal-design-213911",
+  "private_key_id": "5107ed92e46da7f5fd742b4350456aa308eabc7e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC6cTJTK31ocL2A\n2MCEenLiI3DLbb/oOrcd/y0JBlzkqxa0MTexRp+RnIh4rNZax6u98WovHgq3O5xX\nJzYI4zdzXwkqXg5mNBWDe3fc18+Xgxs7fjrJfo0tEsj1XUAhqk/20LK74W0pC5JN\ni+qzZFGSsQhNBuswLuQvvWrcxH5XP4LiVPZE6MlALG75DDE/42mFnY5Q2Y+2NboM\nIhqrW5QHFPODPgjkT1iV/NnTaaTQMA11KO8H/38u5CueAXnbFUkJP/dL54UhtTDt\no0zNREXtCnQx3Tnm9m31V9UeNFpSGs5cUywQdKFBBlx6MgP4/5dd2RnnrkpHJ22t\nyJ7JP2UlAgMBAAECggEALaGW15RFVVKCjw59z+7IP2C9Mozh80yrlMPnmdXc1nqp\nS+Df6JuIYnMVU7O5ou5Lsmlru6x2ovIMCainKPWzlKEl9SCgFZOZ0FxfscWAIW0N\nNTpn2PkIRIfcd3EjSRoOCDJ8DE/YD7utSx17i/x5mpWJmpCe72QKpUSO6wmMgn20\n/PNZDi/j+sIb69iwoe+T3YvdrOrnjIFXO/xFlDx+cr2Qi2xnJMj7RfHaKXdrsqT4\nUSZu22CXHmXnnPEJit8O/cFP+skLIKqUt8zG/ymNvUU9TGADcHcqYJkjv4SORqgX\nDj5xrLsN/PvTipz5bmWrwi2YbqD1bMrJ5nV9QwnCAQKBgQD5uB9CDG2rDoL7H06V\nFngAb5edetoUYtePxqAgoNvW7kp2I0RkQdfsr3ooe53NvBIpYXQ2E48tZySfWPAj\n52siFuSIb4mVEDmRQm9cVTLxx/tfyP+RCXSx/v8PP4X1lA99KfGxw7jDg/n9+IYs\nXJalEkALlDQ8B6KOxKlkfaR3VQKBgQC/IaZZq6JIB/DY4PHjPPONpg0qyl6pC3gm\n/pbDg2EuG0fR4kIf9JAwzSXd+m+zKtVSKva7vCPtLxbp0HwZ4SQvbKunGkabAW6D\nqy3UcazEAwxbgIebEW5ot9rPb3dl98gxjv0/5iF06XPIQEpbc5EA+yMqOIORKCZo\nZycVpHyWkQKBgEsRW2wqeklCuoMtHR1aPMa8xRIVHTulnvFcn0RPtuZ8iavL3EJb\nPMKs2YcT6hMvpzIDVsDuzkqyx+KTBNV2OtFrmlWdWfmSgAu3sexKvF7MZDeeH52E\n/yyG4DvAN8/kK2fP1RVAJem4Yc1ECWmKh8qlmtUgPzeQgAB1BArubiNlAoGAckXd\nHnm2kdhlkFWVaWZUu5jPAIlz5R/dW3sViplvLdDTtNHQ9SgUWYkeHcSQqg9u8SyM\nzhujYzinO24R9KseJliTnFniYuSNPZ3Hzd+VCrBD4CVNblISr/tUkHc1bLqjb7Xt\nBhpCYJL/TXfavSiwRmTgVmrphoz5wawCuzbX4nECgYAtYRbMejUPBjdGfTIjUk7n\nIuhKhpPLuY3dqtcjbpOMkaoCgxMkgmkPF6uher8OcCHrKNQeLGl4aRRxcQ9fxXFY\n6RuV2tg6JfDhnReMaL/AyKEAwtW+gFyQR2ZGb25FGJT5ogYjz/WiDTvvX07K9bpc\nPaJtV0ZRCBbkhUnxuq4bQw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "terraform@vernal-design-213911.iam.gserviceaccount.com",
+  "client_id": "101038106427538161013",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/terraform%40vernal-design-213911.iam.gserviceaccount.com"
+}
