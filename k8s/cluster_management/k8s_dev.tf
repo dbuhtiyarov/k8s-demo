@@ -1,3 +1,17 @@
+variable "project_name" {}
+
+provider "google" {
+  credentials = "${file("~/.gcp/account.json")}"
+  project     = "${var.project_name}"
+}
+
+terraform {
+  backend "gcs" {
+    prefix  = "terraform/k8s-dev"
+    credentials = "~/.gcp/account.json"
+  }
+}
+
 resource "google_container_node_pool" "np" {
   name       = "node-pool"
   zone       = "us-central1-a"

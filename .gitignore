@@ -1,2 +1,5 @@
-/k8s/cluster_management/account.json
-/k8s/cluster_management/creds.tf
+**/terraform.tfstate*
+**/.terraform/
+**/backend.tf
+**/terraform.tfvars
+**/values-*.yaml
