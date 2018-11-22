@@ -1,8 +1,8 @@
-#Repo for Atlassian k8s demo
+# Repo for Atlassian k8s demo
 
 that project is vanilla installation Atlassian stack into k8s
 
-###Terraform
+### Terraform
 
 Create a structure like
 
