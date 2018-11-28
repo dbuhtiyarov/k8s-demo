@@ -1,0 +1,46 @@
+version: "2.1"
+services:
+ vault:
+  image: vault:0.10.3
+  container_name: vault
+  volumes:
+   - ./vault/file:/vault/file:rw
+   - ./vault/config:/vault/config:rw
+   - ./vault/logs:/vault/logs:rw
+  cap_add:
+   - IPC_LOCK
+#  ports:
+    # - "8200:8200"
+    # - "8201:8201"
+  environment:
+   VAULT_ADDR: 'http://127.0.0.1:8200'
+   VAULT_UI: 'true'
+  entrypoint: vault server -config=/vault/config/
+
+
+# vault-ui:
+#  image: djenriquez/vault-ui
+#  container_name: vault-ui
+#  depends_on:
+#   - vault
+#  links:
+#   - vault
+#  environment:
+#   NODE_TLS_REJECT_UNAUTHORIZED: 0
+#   VAULT_URL_DEFAULT: http://vault:8200
+#   VAULT_AUTH_DEFAULT: GITHUB
+
+ nginx:
+  image: nginx:latest
+  container_name: nginx
+  ports:
+   - "80:80"
+   #- "443:443"
+  volumes:
+   - ./nginx/vault.conf:/etc/nginx/conf.d/vault.conf:ro
+   #- ./nginx/ssl:/etc/nginx/ssl:ro
+  depends_on:
+   - vault
+#   - vault-ui
+  links:
+   - vault
