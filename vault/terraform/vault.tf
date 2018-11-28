@@ -32,8 +32,8 @@ resource "google_compute_instance" "ubuntu-xenial" {
   }
 metadata_startup_script = "${file("provision.sh")}"
 }
-resource "google_compute_firewall_vault" "http" {
-  name = "http"
+resource "google_compute_firewall" "vault" {
+  name = "vault"
   network = "default"
 
   allow {
