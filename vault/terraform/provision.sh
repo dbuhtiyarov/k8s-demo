@@ -11,14 +11,20 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-c
 sudo chmod +x /usr/local/bin/docker-compose;
 
 sudo apt-get install git;
-sudo cd /opt
+#sudo cd /opt
+sudo pwd; cd /opt;
 sudo mkdir github
-sudo cd github/
-sudo git clone https://github.com/dbuhtiyarov/k8s-demo.git
-sudo cd /opt/github/k8s-demo/vault/terraform/
 
-sudo cp -p vault.conf ./nginx/
-sudo cp -p config.json ./vault/config/
+#sudo cd github/
+sudo pwd; cd github;
+sudo git clone https://github.com/dbuhtiyarov/k8s-demo.git
+#sudo cd /opt/github/k8s-demo/vault/terraform/
+sudo pwd; cd k8s-demo/vault/terraform;
+
+#sudo cp -p vault.conf ./nginx/
+sudo mkdir nginx; sudo cp -p vault.conf nginx/
+#sudo cp -p config.json ./vault/config/
+sudo mkdir vault; sudo mkdir vault/config; sudo cp -p config.json vault/config/
 
 sudo docker-compose up -d
 
